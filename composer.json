@@ -1,0 +1,41 @@
+{
+  "name": "comertis/timber",
+  "description": "A PHP Logging library",
+  "autoload-dev": {
+    "psr-4": {
+      "Comertis\\Timber\\Tests": "tests"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Comertis\\Timber": "src",
+      "Comertis\\Timber\\Internal": "src/internal"
+    }
+  },
+  "readme": "README.md",
+  "prefer-stable": true,
+  "support": {
+    "email": "support@comertis.com",
+    "docs": "https://github.com/Comertis/Timber/tree/master/docs",
+    "issues": "https://github.com/Comertis/Timber/issues",
+    "source": "https://github.com/Comertis/Timber"
+  },
+  "keywords": [
+    "logging"
+  ],
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cristian Moraru",
+      "email": "cristian@comertis.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.0.0"
+  }
+}
