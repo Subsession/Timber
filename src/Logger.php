@@ -34,6 +34,7 @@
 
 namespace Comertis\Timber;
 
+use Comertis\Timber\Internal\LoggerConfig;
 use Comertis\Timber\LogSeverity;
 
 /**
@@ -48,6 +49,24 @@ use Comertis\Timber\LogSeverity;
  */
 class Logger
 {
+    /**
+     * LoggerConfig instance
+     *
+     * @access private
+     * @var    LoggerConfig
+     */
+    private $_config;
+
+    /**
+     * Constructor
+     *
+     * @param LoggerConfig $config LoggerConfig instance
+     */
+    public function __construct(LoggerConfig $config)
+    {
+        $this->_config = $config;
+    }
+
     /**
      * Log a message with TRACE severity
      *

@@ -32,9 +32,10 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber\Tests;
+namespace Comertis\Timber\Exceptions;
 
-use PHPUnit\Framework\TestCase;
+use Comertis\Timber\Exceptions\IException;
+use Exception;
 
 /**
  * Undocumented class
@@ -46,7 +47,65 @@ use PHPUnit\Framework\TestCase;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LoggerTests extends TestCase
+class LoggerBuilderException extends Exception implements IException
 {
+    /**
+     * Exception message
+     *
+     * @access protected
+     * @var    string
+     */
+    protected $message = "Unknown exception";
 
+    /**
+     * User-defined exception code
+     *
+     * @access protected
+     * @var    integer
+     */
+    protected $code = 0;
+
+    /**
+     * Source filename of exception
+     *
+     * @access protected
+     * @var    string
+     */
+    protected $file;
+
+    /**
+     * Source line of exception
+     *
+     * @access protected
+     * @var    integer
+     */
+    protected $line;
+
+    /**
+     * Constructor
+     *
+     * @param string  $message Exception message
+     * @param integer $code    Exception code
+     */
+    public function __construct($message = null, $code = 0)
+    {
+        if (!$message) {
+            throw new $this('Unknown ' . get_class($this));
+        }
+
+        parent::__construct($message, $code);
+    }
+
+    /**
+     * Override __toString()
+     *
+     * @access public
+     * @return string
+     */
+    public function __toString()
+    {
+        return get_class($this) . "
+            '{$this->message}' in {$this->file}({$this->line})\n"
+            . "{$this->getTraceAsString()}";
+    }
 }

@@ -32,9 +32,7 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber\Tests;
-
-use PHPUnit\Framework\TestCase;
+namespace Comertis\Timber\Internal\Engine;
 
 /**
  * Undocumented class
@@ -46,7 +44,7 @@ use PHPUnit\Framework\TestCase;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LoggerTests extends TestCase
+class LoggingEngine
 {
-
+    
 }

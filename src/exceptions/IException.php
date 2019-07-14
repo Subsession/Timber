@@ -32,12 +32,10 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber\Tests;
-
-use PHPUnit\Framework\TestCase;
+namespace Comertis\Timber\Exceptions;
 
 /**
- * Undocumented class
+ * Custom exception interface
  *
  * @category Logging
  * @package  Comertis\Timber
@@ -46,7 +44,67 @@ use PHPUnit\Framework\TestCase;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LoggerTests extends TestCase
+interface IException
 {
+    /**
+     * Exception message
+     *
+     * @access public
+     * @return string
+     */
+    public function getMessage();
 
+    /**
+     * User-defined Exception code
+     *
+     * @access public
+     * @return integer|string
+     */
+    public function getCode();
+
+    /**
+     * Source filename
+     *
+     * @access public
+     * @return string
+     */
+    public function getFile();
+
+    /**
+     * Source line
+     *
+     * @access public
+     * @return integer|string
+     */
+    public function getLine();
+
+    /**
+     * An array of the backtrace()
+     *
+     * @access public
+     * @return array
+     */
+    public function getTrace();
+
+    /**
+     * Formated string of trace
+     *
+     * @return string
+     */
+    public function getTraceAsString();
+
+    /**
+     * Formated string for display
+     *
+     * @return string
+     */
+    public function __toString();
+
+    /**
+     * Constructor
+     *
+     * @param string  $message Exception message
+     * @param integer $code    Exception code
+     */
+    public function __construct($message = null, $code = 0);
 }

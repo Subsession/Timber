@@ -34,6 +34,8 @@
 
 namespace Comertis\Timber;
 
+use Comertis\Timber\Exceptions\LoggerBuilderException;
+use Comertis\Timber\Internal\LoggerConfig;
 use Comertis\Timber\Logger;
 
 /**
@@ -55,26 +57,110 @@ class LoggerBuilder
      * @access private
      * @var    Logger[]
      */
-    private static $_instances = [];
+    private static $_loggerInstances = [];
+
+    /**
+     * LoggerConfig instance
+     *
+     * @access private
+     * @var    LoggerConfig
+     */
+    private $_config;
+
+    /**
+     * Constructor
+     *
+     * @access private
+     */
+    private function __construct()
+    {
+        $this->_config = new LoggerConfig();
+    }
+
+    /**
+     * Get the LoggerBuilder instance
+     *
+     * @static
+     * @access public
+     * @return self
+     */
+    public static function getInstance()
+    {
+        return new LoggerBuilder();
+    }
+
+    /**
+     * Get a previously configured Logger instance
+     *
+     * @param string $name Logger instance name
+     *
+     * @static
+     * @access public
+     * @throws LoggerBuilderException if the name doesn't match any
+     *                                configured Logger instances
+     * @return Logger
+     */
+    public static function getLogger($name)
+    {
+        if (!in_array($name, self::$_loggerInstances)) {
+            $error = "No Logger instance with name '$name' has been created";
+            throw new LoggerBuilderException($error);
+        }
+
+        return self::$_loggerInstances[$name];
+    }
+
+    /**
+     * Set the output folder for log files
+     *
+     * @param string $folder Output folder for log files
+     *
+     * @return self
+     */
+    public function setOutputFolder($folder)
+    {
+        $this->_config->setFolder($folder);
+
+        return $this;
+    }
+
+    /**
+     * Set the log file name
+     *
+     * @param string $fileName Log file name
+     *
+     * @access public
+     * @return self
+     */
+    public function setFileName($fileName)
+    {
+        $this->_config->setFileName($fileName);
+
+        return $this;
+    }
 
     /**
      * Create a new Logger instance
      *
      * @param string $name Instance name
      *
-     * @static
      * @access public
      * @return Logger
      */
-    public static function build($name)
+    public function build($name)
     {
-        if (in_array($name, self::$_instances)) {
-            return self::$_instances[$name];
+        if (in_array($name, self::$_loggerInstances)) {
+            return self::$_loggerInstances[$name];
         }
 
-        $logger = new Logger();
-        self::$_instances[$name] = $logger;
+        $logger = new Logger($this->_config);
+        self::$_loggerInstances[$name] = $logger;
 
         return $logger;
     }
 }
+
+$l = LoggerBuilder::getInstance()
+    ->setOutputFolder("")
+    ->setFileName("")
+    ->build("");
