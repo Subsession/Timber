@@ -34,6 +34,8 @@
 
 namespace Comertis\Timber\Internal;
 
+use DateTime;
+
 /**
  * Undocumented class
  *
@@ -89,6 +91,13 @@ class LogMessage
      * @var    string
      */
     private $_message;
+
+    /**
+     * Separator for log message sections
+     *
+     * @var string
+     */
+    const SEPARATOR = " | ";
 
     /**
      * Get log message DateTime
@@ -208,5 +217,28 @@ class LogMessage
         $this->_message = $message;
 
         return $this;
+    }
+
+    /**
+     * Override toString
+     *
+     * Output format:
+     * DateTime | SEVERITY | File:line | Message
+     *
+     * @access public
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = "";
+        $string .= $this->getDateTime();
+        $string .= self::SEPARATOR;
+        $string .= $this->getSeverity();
+        $string .= self::SEPARATOR;
+        $string .= $this->getFile() . ":" . $this->getLine();
+        $string .= self::SEPARATOR;
+        $string .= $this->getMessage();
+
+        return $string;
     }
 }
