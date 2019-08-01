@@ -32,7 +32,10 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber;
+namespace Comertis\Timber\Formatters;
+
+use Comertis\Timber\Formatters\FormatterInterface;
+use Comertis\Timber\Internal\LogMessage;
 
 /**
  * Undocumented class
@@ -44,12 +47,17 @@ namespace Comertis\Timber;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LogSeverity
+class PlainTextFormatter implements FormatterInterface
 {
-    const TRACE = "TRACE   ";
-    const DEBUG = "DEBUG   ";
-    const INFO = "INFO    ";
-    const WARNING = "WARNING ";
-    const ERROR = "ERROR   ";
-    const FATAL = "FATAL   ";
+    /**
+     * Format LogMessage instance
+     *
+     * @param LogMessage $logMessage LogMessage instance
+     *
+     * @return mixed
+     */
+    public function format(LogMessage $logMessage)
+    {
+
+    }
 }

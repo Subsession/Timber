@@ -32,7 +32,9 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber;
+namespace Comertis\Timber\Adapters;
+
+use Comertis\Timber\Adapters\BaseLogger;
 
 /**
  * Undocumented class
@@ -44,12 +46,30 @@ namespace Comertis\Timber;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LogSeverity
+class FileLogger extends BaseLogger
 {
-    const TRACE = "TRACE   ";
-    const DEBUG = "DEBUG   ";
-    const INFO = "INFO    ";
-    const WARNING = "WARNING ";
-    const ERROR = "ERROR   ";
-    const FATAL = "FATAL   ";
+    /**
+     * Deferred stack
+     *
+     * @var array
+     */
+    private $_dStack;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->_dStack = [];
+    }
+
+    /**
+     * Destructor
+     */
+    public function __destruct()
+    {
+        if (sizeof($this->_dStack) === 0) {
+            return;
+        }
+    }
 }

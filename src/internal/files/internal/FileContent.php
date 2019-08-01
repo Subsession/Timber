@@ -32,7 +32,7 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber;
+namespace Comertis\Timber\Internal\Files;
 
 /**
  * Undocumented class
@@ -44,12 +44,56 @@ namespace Comertis\Timber;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LogSeverity
+class FileContent
 {
-    const TRACE = "TRACE   ";
-    const DEBUG = "DEBUG   ";
-    const INFO = "INFO    ";
-    const WARNING = "WARNING ";
-    const ERROR = "ERROR   ";
-    const FATAL = "FATAL   ";
+    /**
+     * File content
+     *
+     * @access private
+     * @var    mixed
+     */
+    private $_content;
+
+    /**
+     * Constructor
+     *
+     * @param mixed $content File content
+     */
+    public function __construct($content)
+    {
+        $this->_content = $content;
+    }
+
+    /**
+     * Read file content as string
+     *
+     * @access public
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->_content;
+    }
+
+    /**
+     * Read file content raw
+     *
+     * @access public
+     * @return mixed
+     */
+    public function raw()
+    {
+        return $this->_content;
+    }
+
+    /**
+     * Read file content json_decoded
+     *
+     * @access public
+     * @return object|mixed
+     */
+    public function json()
+    {
+        return json_decode($this->_content);
+    }
 }

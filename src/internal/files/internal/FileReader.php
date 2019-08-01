@@ -32,7 +32,7 @@
  * @link     https://github.com/Comertis/Timber
  */
 
-namespace Comertis\Timber;
+namespace Comertis\Timber\Internal\Files;
 
 /**
  * Undocumented class
@@ -44,12 +44,18 @@ namespace Comertis\Timber;
  * @version  Release: 1.0.0
  * @link     https://github.com/Comertis/Timber
  */
-final class LogSeverity
+class FileReader
 {
-    const TRACE = "TRACE   ";
-    const DEBUG = "DEBUG   ";
-    const INFO = "INFO    ";
-    const WARNING = "WARNING ";
-    const ERROR = "ERROR   ";
-    const FATAL = "FATAL   ";
+    /**
+     * Read a file's content
+     *
+     * @param File $file File to read from
+     *
+     * @access public
+     * @return FileContent
+     */
+    public function read(File $file)
+    {
+
+    }
 }
