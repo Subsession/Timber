@@ -25,14 +25,14 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Tests;
+namespace Subsession\Timber\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -40,11 +40,11 @@ use PHPUnit\Framework\TestCase;
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 final class LoggerTests extends TestCase
 {

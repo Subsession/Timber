@@ -25,27 +25,27 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber;
+namespace Subsession\Timber;
 
-use Comertis\Timber\Internal\LoggerConfig;
-use Comertis\Timber\LogSeverity;
+use Subsession\Timber\Internal\LoggerConfig;
+use Subsession\Timber\LogSeverity;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class Logger
 {
@@ -55,7 +55,7 @@ class Logger
      * @access private
      * @var    LoggerConfig
      */
-    private $_config;
+    private $config;
 
     /**
      * Constructor
@@ -64,7 +64,7 @@ class Logger
      */
     public function __construct(LoggerConfig $config)
     {
-        $this->_config = $config;
+        $this->config = $config;
     }
 
     /**
@@ -170,6 +170,6 @@ class Logger
      */
     public function log($logSeverity, $message)
     {
-
+        //
     }
 }

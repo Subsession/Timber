@@ -1,5 +1,5 @@
 {
-  "name": "comertis/timber",
+  "name": "subsession/timber",
   "description": "A PHP Logging library",
   "type": "library",
   "readme": "README.md",
@@ -12,33 +12,31 @@
   "authors": [
     {
       "name": "Cristian Moraru",
-      "email": "cristian@comertis.com"
+      "email": "cristian.moraru@live.com",
+      "role": "Developer"
     }
   ],
   "support": {
-    "email": "support@comertis.com",
-    "docs": "https://github.com/Comertis/Timber/tree/master/docs",
-    "issues": "https://github.com/Comertis/Timber/issues",
-    "source": "https://github.com/Comertis/Timber"
+    "docs": "https://github.com/Subsession/Timber/tree/master/docs",
+    "issues": "https://github.com/Subsession/Timber/issues",
+    "source": "https://github.com/Subsession/Timber"
   },
   "config": {
     "sort-packages": true
   },
   "autoload": {
     "psr-4": {
-      "Comertis\\Timber": "src/",
-      "Comertis\\Timber\\Internal": "src/internal/",
-      "Comertis\\Timber\\Internal\\Engine": "src/internal/engine/",
-      "Comertis\\Timber\\Internal\\Files": "src/internal/files/"
+      "Subsession\\Timber\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Comertis\\Timber\\Tests": "tests/"
+      "Subsession\\Timber\\Tests\\": "tests/"
     }
   },
   "require": {
-    "php": "7.1.* || 7.3.*"
+    "php": ">=7.0.0",
+    "subsession/exceptions": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0"

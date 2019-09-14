@@ -32,7 +32,9 @@
  * @link     https://github.com/Subsession/Timber
  */
 
-namespace Subsession\Timber;
+namespace Subsession\Timber\Abstraction;
+
+use Subsession\Timber\Internal\LogMessage;
 
 /**
  * Undocumented class
@@ -44,12 +46,7 @@ namespace Subsession\Timber;
  * @version  Release: 1.0.0
  * @link     https://github.com/Subsession/Timber
  */
-final class LogSeverity
+interface LoggerInterface
 {
-    const TRACE = "TRACE   ";
-    const DEBUG = "DEBUG   ";
-    const INFO = "INFO    ";
-    const WARNING = "WARNING ";
-    const ERROR = "ERROR   ";
-    const FATAL = "FATAL   ";
+    public function log(LogMessage &$message);
 }

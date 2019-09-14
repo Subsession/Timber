@@ -25,24 +25,24 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Internal;
+namespace Subsession\Timber\Internal;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class LoggerConfig
 {
@@ -52,7 +52,7 @@ class LoggerConfig
      * @access private
      * @var    string
      */
-    private $_folder;
+    private $folder;
 
     /**
      * Log filename
@@ -60,7 +60,7 @@ class LoggerConfig
      * @access private
      * @var    string
      */
-    private $_fileName;
+    private $fileName;
 
     /**
      * File should regenerate each day
@@ -68,7 +68,7 @@ class LoggerConfig
      * @access private
      * @var    boolean
      */
-    private $_rollingFile;
+    private $rollingFile;
 
     /**
      * Get log output folder
@@ -77,7 +77,7 @@ class LoggerConfig
      */
     public function getFolder()
     {
-        return $this->_folder;
+        return $this->folder;
     }
 
     /**
@@ -89,7 +89,7 @@ class LoggerConfig
      */
     public function setFolder($folder)
     {
-        $this->_folder = $folder;
+        $this->folder = $folder;
 
         return $this;
     }
@@ -101,7 +101,7 @@ class LoggerConfig
      */
     public function getFileName()
     {
-        return $this->_fileName;
+        return $this->fileName;
     }
 
     /**
@@ -113,7 +113,7 @@ class LoggerConfig
      */
     public function setFileName(string $fileName)
     {
-        $this->_fileName = $fileName;
+        $this->fileName = $fileName;
 
         return $this;
     }
@@ -125,7 +125,7 @@ class LoggerConfig
      */
     public function getRollingFile()
     {
-        return $this->_rollingFile;
+        return $this->rollingFile;
     }
 
     /**
@@ -137,7 +137,7 @@ class LoggerConfig
      */
     public function setRollingFile(boolean $rollingFile)
     {
-        $this->_rollingFile = $rollingFile;
+        $this->rollingFile = $rollingFile;
 
         return $this;
     }

@@ -25,24 +25,24 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Internal\Files;
+namespace Subsession\Timber\Internal\Files;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class FileContent
 {
@@ -52,7 +52,7 @@ class FileContent
      * @access private
      * @var    mixed
      */
-    private $_content;
+    private $content;
 
     /**
      * Constructor
@@ -61,7 +61,7 @@ class FileContent
      */
     public function __construct($content)
     {
-        $this->_content = $content;
+        $this->content = $content;
     }
 
     /**
@@ -72,7 +72,7 @@ class FileContent
      */
     public function __toString()
     {
-        return (string) $this->_content;
+        return (string) $this->content;
     }
 
     /**
@@ -83,7 +83,7 @@ class FileContent
      */
     public function raw()
     {
-        return $this->_content;
+        return $this->content;
     }
 
     /**
@@ -94,6 +94,6 @@ class FileContent
      */
     public function json()
     {
-        return json_decode($this->_content);
+        return json_decode($this->content);
     }
 }

@@ -25,26 +25,26 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Adapters;
+namespace Subsession\Timber\Adapters;
 
-use Comertis\Timber\Adapters\BaseLogger;
+use Subsession\Timber\Adapters\BaseLogger;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class FileLogger extends BaseLogger
 {
@@ -53,23 +53,13 @@ class FileLogger extends BaseLogger
      *
      * @var array
      */
-    private $_dStack;
+    private $dStack;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->_dStack = [];
-    }
-
-    /**
-     * Destructor
-     */
-    public function __destruct()
-    {
-        if (sizeof($this->_dStack) === 0) {
-            return;
-        }
+        $this->dStack = [];
     }
 }

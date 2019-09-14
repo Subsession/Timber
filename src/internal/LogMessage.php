@@ -25,14 +25,14 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Internal;
+namespace Subsession\Timber\Internal;
 
 use DateTime;
 
@@ -40,11 +40,11 @@ use DateTime;
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class LogMessage
 {
@@ -56,7 +56,7 @@ class LogMessage
      * @access private
      * @var    DateTime
      */
-    private $_dateTime;
+    private $dateTime;
 
     /**
      * Log message severity
@@ -66,7 +66,7 @@ class LogMessage
      * @access private
      * @var    string
      */
-    private $_severity;
+    private $severity;
 
     /**
      * Source file
@@ -74,7 +74,7 @@ class LogMessage
      * @access private
      * @var    string
      */
-    private $_file;
+    private $file;
 
     /**
      * Line number where the log message was created
@@ -82,7 +82,7 @@ class LogMessage
      * @access private
      * @var    integer
      */
-    private $_line;
+    private $line;
 
     /**
      * Log message
@@ -90,7 +90,7 @@ class LogMessage
      * @access private
      * @var    string
      */
-    private $_message;
+    private $message;
 
     /**
      * Separator for log message sections
@@ -106,7 +106,7 @@ class LogMessage
      */
     public function getDateTime()
     {
-        return $this->_dateTime;
+        return $this->dateTime;
     }
 
     /**
@@ -118,7 +118,7 @@ class LogMessage
      */
     public function setDateTime($dateTime)
     {
-        $this->_dateTime = $dateTime;
+        $this->dateTime = $dateTime;
 
         return $this;
     }
@@ -130,7 +130,7 @@ class LogMessage
      */
     public function getSeverity()
     {
-        return $this->_severity;
+        return $this->severity;
     }
 
     /**
@@ -142,7 +142,7 @@ class LogMessage
      */
     public function setSeverity($severity)
     {
-        $this->_severity = $severity;
+        $this->severity = $severity;
 
         return $this;
     }
@@ -154,7 +154,7 @@ class LogMessage
      */
     public function getFile()
     {
-        return $this->_file;
+        return $this->file;
     }
 
     /**
@@ -166,7 +166,7 @@ class LogMessage
      */
     public function setFile($file)
     {
-        $this->_file = $file;
+        $this->file = $file;
 
         return $this;
     }
@@ -178,7 +178,7 @@ class LogMessage
      */
     public function getLine()
     {
-        return $this->_line;
+        return $this->line;
     }
 
     /**
@@ -190,7 +190,7 @@ class LogMessage
      */
     public function setLine($line)
     {
-        $this->_line = $line;
+        $this->line = $line;
 
         return $this;
     }
@@ -202,7 +202,7 @@ class LogMessage
      */
     public function getMessage()
     {
-        return $this->_message;
+        return $this->message;
     }
 
     /**
@@ -214,7 +214,7 @@ class LogMessage
      */
     public function setMessage($message)
     {
-        $this->_message = $message;
+        $this->message = $message;
 
         return $this;
     }

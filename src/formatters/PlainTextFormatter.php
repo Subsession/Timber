@@ -25,27 +25,27 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Formatters;
+namespace Subsession\Timber\Formatters;
 
-use Comertis\Timber\Formatters\FormatterInterface;
-use Comertis\Timber\Internal\LogMessage;
+use Subsession\Timber\Formatters\FormatterInterface;
+use Subsession\Timber\Internal\LogMessage;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class PlainTextFormatter implements FormatterInterface
 {
@@ -56,8 +56,8 @@ class PlainTextFormatter implements FormatterInterface
      *
      * @return mixed
      */
-    public function format(LogMessage $logMessage)
+    public function format(LogMessage &$logMessage)
     {
-
+        //
     }
 }

@@ -25,24 +25,24 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber\Internal\Files;
+namespace Subsession\Timber\Internal\Files;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class File
 {
@@ -52,7 +52,7 @@ class File
      * @access private
      * @var    string
      */
-    private $_name;
+    private $name;
 
     /**
      * File extension
@@ -60,7 +60,7 @@ class File
      * @access private
      * @var    string
      */
-    private $_extension;
+    private $extension;
 
     /**
      * File name + extension
@@ -68,7 +68,7 @@ class File
      * @access private
      * @var    string
      */
-    private $_fullName;
+    private $fullName;
 
     /**
      * Constructor
@@ -110,7 +110,7 @@ class File
      */
     public function getName()
     {
-        return $this->_name;
+        return $this->name;
     }
 
     /**
@@ -123,7 +123,7 @@ class File
      */
     public function setName($name)
     {
-        $this->_name = $name;
+        $this->name = $name;
 
         return $this;
     }
@@ -136,7 +136,7 @@ class File
      */
     public function getExtension()
     {
-        return $this->_extension;
+        return $this->extension;
     }
 
     /**
@@ -149,7 +149,7 @@ class File
      */
     public function setExtension($extension)
     {
-        $this->_extension = $extension;
+        $this->extension = $extension;
 
         return $this;
     }
@@ -162,11 +162,11 @@ class File
      */
     public function getFullName()
     {
-        if (isset($this->_fullName)) {
-            $this->_setFullName();
+        if (isset($this->fullName)) {
+            $this->setFullName();
         }
 
-        return $this->_fullName;
+        return $this->fullName;
     }
 
     /**
@@ -175,9 +175,9 @@ class File
      * @access private
      * @return self
      */
-    private function _setFullName()
+    private function setFullName()
     {
-        $this->_fullName = $this->getPath() .
+        $this->fullName = $this->getPath() .
         $this->getName() .
         $this->getExtension();
     }

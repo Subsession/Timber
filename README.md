@@ -1,1 +1,3 @@
-# Comertis/Timber
+# Timber
+
+A PHP logging library

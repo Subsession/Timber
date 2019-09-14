@@ -25,28 +25,28 @@
  * DEALINGS IN THE SOFTWARE.
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  GIT: &Id&
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 
-namespace Comertis\Timber;
+namespace Subsession\Timber;
 
-use Comertis\Timber\Exceptions\LoggerBuilderException;
-use Comertis\Timber\Internal\LoggerConfig;
-use Comertis\Timber\Logger;
+use Subsession\Timber\Exceptions\LoggerBuilderException;
+use Subsession\Timber\Internal\LoggerConfig;
+use Subsession\Timber\Logger;
 
 /**
  * Undocumented class
  *
  * @category Logging
- * @package  Comertis\Timber
- * @author   Cristian Moraru <cristian@comertis.com>
+ * @package  Subsession\Timber
+ * @author   Cristian Moraru <cristian.moraru@live.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @version  Release: 1.0.0
- * @link     https://github.com/Comertis/Timber
+ * @link     https://github.com/Subsession/Timber
  */
 class LoggerBuilder
 {
@@ -57,7 +57,7 @@ class LoggerBuilder
      * @access private
      * @var    Logger[]
      */
-    private static $_loggerInstances = [];
+    private static $loggerInstances = [];
 
     /**
      * LoggerConfig instance
@@ -65,7 +65,7 @@ class LoggerBuilder
      * @access private
      * @var    LoggerConfig
      */
-    private $_config;
+    private $config;
 
     /**
      * Constructor
@@ -74,7 +74,7 @@ class LoggerBuilder
      */
     private function __construct()
     {
-        $this->_config = new LoggerConfig();
+        $this->config = new LoggerConfig();
     }
 
     /**
@@ -102,12 +102,12 @@ class LoggerBuilder
      */
     public static function getLogger($name)
     {
-        if (!in_array($name, self::$_loggerInstances)) {
+        if (!in_array($name, self::$loggerInstances)) {
             $error = "No Logger instance with name '$name' has been created";
             throw new LoggerBuilderException($error);
         }
 
-        return self::$_loggerInstances[$name];
+        return self::$loggerInstances[$name];
     }
 
     /**
@@ -119,7 +119,7 @@ class LoggerBuilder
      */
     public function setOutputFolder($folder)
     {
-        $this->_config->setFolder($folder);
+        $this->config->setFolder($folder);
 
         return $this;
     }
@@ -134,7 +134,7 @@ class LoggerBuilder
      */
     public function setFileName($fileName)
     {
-        $this->_config->setFileName($fileName);
+        $this->config->setFileName($fileName);
 
         return $this;
     }
@@ -149,18 +149,13 @@ class LoggerBuilder
      */
     public function build($name)
     {
-        if (in_array($name, self::$_loggerInstances)) {
-            return self::$_loggerInstances[$name];
+        if (in_array($name, self::$loggerInstances)) {
+            return self::$loggerInstances[$name];
         }
 
-        $logger = new Logger($this->_config);
-        self::$_loggerInstances[$name] = $logger;
+        $logger = new Logger($this->config);
+        self::$loggerInstances[$name] = $logger;
 
         return $logger;
     }
 }
-
-$l = LoggerBuilder::getInstance()
-    ->setOutputFolder("")
-    ->setFileName("")
-    ->build("");
