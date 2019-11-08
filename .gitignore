@@ -1,4 +1,2 @@
-vendor
-src/vendor
-.vscode
-composer.lock
+/vendor
+/build
